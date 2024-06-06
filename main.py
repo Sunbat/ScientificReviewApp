@@ -49,6 +49,7 @@ def main():
         print(f"Publication Date: {article_date}")
         print(f"Citation Count: {citation_count}")
         print(f"Relevance Score: {relevance_score}\n")
-
+# Polish ranking algorithm and fix database retrieval
+# Combine publication date ranking and frequency of prompt word rankings into one holistic ranking
 if __name__ == "__main__":
     main()
