@@ -37,7 +37,8 @@ def extract_citation_count(article_details):
     if match:
         return int(match.group(1))
     return 0
-
+# update relevance scoring algorithm asap
+# elaborate on calculation algo
 def calculate_relevance_score(publication_year, citation_count):
     """Calculate the relevance score based on publication year and citation count."""
     current_year = datetime.now().year
