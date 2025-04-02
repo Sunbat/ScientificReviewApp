@@ -3,7 +3,8 @@ from datetime import datetime
 import re
 
 # Set your email here for Entrez API usage
-Entrez.email = 'loicrulin@gmail.com'
+email = input("Enter your email: ")
+Entrez.email = email
 
 def search_pubmed(query, max_results=10):
     """Search PubMed for articles matching the query."""
@@ -71,3 +72,6 @@ if __name__ == "__main__":
 
 # Review relevance scoring algo
 # UI?
+# Give score info and reference
+# Relevance scoring algo, improvement
+    #
