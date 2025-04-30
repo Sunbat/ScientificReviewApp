@@ -1,6 +1,19 @@
-# ScientificReviewApp
-Pub med scientific review console application
-## Using the console application
-To get access to the Pub Med database you first need to create an account
+# 🔬 PubMed Scientific Review Tool
 
-You will use the email from this account within the console application
+This app lets you search PubMed and automatically rank articles based on:
+- Recency
+- Citation count (stubbed, extendable)
+- Term match
+
+## 🚀 Features
+- ✅ CLI input, GUI (Tkinter), and web app (Streamlit)
+- ✅ Relevance scoring
+- ✅ Progress bar + article table
+- ✅ Export to CSV and PDF (GUI)
+- ✅ Web UI (Streamlit)
+
+## 🖥️ How to Use
+
+### 1. Install dependencies
+```bash
+pip install -r requirements.txt
