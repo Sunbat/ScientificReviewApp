@@ -1,0 +1,6 @@
+aiohttp~=3.11.16
+matplotlib~=3.10.1
+bio~=1.7.1
+biopython~=1.85
+fpdf>=1.7.2
+streamlit>=1.30.0
