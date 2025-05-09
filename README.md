@@ -10,7 +10,6 @@ This app lets you search PubMed and automatically rank articles based on:
 - ✅ Relevance scoring
 - ✅ Progress bar + article table
 - ✅ Export to CSV and PDF (GUI)
-- ✅ Web UI (Streamlit)
 
 ## 🖥️ How to Use
 
