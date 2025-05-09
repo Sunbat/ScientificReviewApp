@@ -17,3 +17,12 @@ This app lets you search PubMed and automatically rank articles based on:
 ### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
+```
+### 2. Run with CLI
+```
+python main.py
+```
+### 3. Or run with GUI
+```
+python gui.py
+```
