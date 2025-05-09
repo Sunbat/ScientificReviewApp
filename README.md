@@ -6,7 +6,7 @@ This app lets you search PubMed and automatically rank articles based on:
 - Term match
 
 ## 🚀 Features
-- ✅ CLI input, GUI (Tkinter), and web app (Streamlit)
+- ✅ CLI input, GUI (Tkinter)
 - ✅ Relevance scoring
 - ✅ Progress bar + article table
 - ✅ Export to CSV and PDF (GUI)

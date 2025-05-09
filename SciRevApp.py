@@ -4,6 +4,7 @@ from Bio import Entrez
 import aiohttp
 import asyncio
 import urllib.parse
+import math
 
 # --- Ask user for PubMed email once ---
 Entrez.email = input("📧 Enter your email for PubMed (Entrez API): ").strip()
@@ -100,14 +101,28 @@ async def extract_citation_count(doi):
         print(f"⚠️ Citation fetch error for DOI {doi}: {e}")
 
     return 0
+
 # --- Relevance Score ---
 def calculate_relevance_score(year, citations, term_score):
     current_year = datetime.now().year
     years_since = current_year - year
+    if years_since < 0:  # Handles potential future dates, though unlikely for publications
+        years_since = 0
+    log_citations = math.log10(citations + 1)
+    normalization_factor_citations = math.log10(1000 + 1)
+    if normalization_factor_citations == 0:  # Should not happen with 1000+1
+        citation_score_component = 0.0
+    else:
+        citation_score_component = log_citations / normalization_factor_citations
+
+    citation_score = min(citation_score_component, 1.0)  # Cap the score at 1.0
     w1, w2, w3 = 0.4, 0.3, 0.3
-    citation_score = min(citations / 100, 1.0)
     recency_score = 1 / (1 + years_since)
-    return round(w1 * citation_score + w2 * recency_score + w3 * term_score, 4)
+    final_score = (w1 * citation_score) + \
+                  (w2 * recency_score) + \
+                  (w3 * term_score)
+
+    return round(final_score, 4)
 
 # --- Main Entry Point for GUI/CLI/Web ---
 async def run_articles(query, max_results=10):
